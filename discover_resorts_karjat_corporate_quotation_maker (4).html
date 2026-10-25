@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover Resorts Karjat | Corporate Quotation Maker</title>
+<style>
+:root{--bg:#080c12;--panel:#101722;--panel2:#0c121b;--line:#263545;--text:#e8f0f7;--muted:#91a4b7;--green:#55ff9a;--green2:#14c96b;--gold:#f4c86a;--red:#ff7373}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#10251f 0,#080c12 48%);color:var(--text);font:14px/1.5 Inter,Segoe UI,Arial,sans-serif}
+header{padding:28px 5vw 20px;border-bottom:1px solid var(--line);background:#080c12dd;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:14px}.mark{width:46px;height:46px;border:1px solid var(--green);border-radius:12px;display:grid;place-items:center;color:var(--green);font-size:22px;font-weight:900;box-shadow:0 0 22px #55ff9a20}
+h1{font-size:clamp(20px,3vw,29px);margin:0;letter-spacing:.3px}.subtitle{color:var(--muted);margin-top:3px}.accent{color:var(--green)}
+.wrap{max-width:1440px;margin:0 auto;padding:26px 5vw 60px;display:grid;grid-template-columns:minmax(320px, .9fr) minmax(360px,1.1fr);gap:22px;align-items:start}
+.panel{background:linear-gradient(145deg,#111a26,#0c121b);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 18px 45px #0003;margin-bottom:18px}
+.panel h2{font-size:15px;text-transform:uppercase;letter-spacing:1.2px;color:var(--green);margin:0 0 17px;display:flex;align-items:center;gap:9px}.panel h2:before{content:"";width:4px;height:17px;background:var(--green);border-radius:4px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{color:#b9c8d6;font-size:12px;font-weight:650}input,select,textarea{width:100%;background:#080e16;border:1px solid #2a3a4d;border-radius:8px;color:var(--text);padding:10px 11px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px #55ff9a12}input[type=checkbox]{width:16px;height:16px;accent-color:var(--green);padding:0}input[type=number]{min-width:65px}
+.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.check{display:flex;gap:9px;align-items:flex-start;padding:10px;border:1px solid #263545;background:#0a111a;border-radius:9px;color:#d5e0e9}.check small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:left;color:var(--green);background:#0a1119;font-weight:700}td,th{padding:10px 8px;border-bottom:1px solid #263545;vertical-align:middle}td input,td select{padding:7px 8px;font-size:12px;min-width:60px}td input[type=checkbox]{min-width:auto}.tablewrap{overflow-x:auto;border:1px solid #263545;border-radius:10px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn{border:1px solid var(--green);background:var(--green);color:#06130b;padding:11px 15px;border-radius:9px;font-weight:800;cursor:pointer;font-size:13px}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.secondary{background:transparent;color:var(--green)}.btn.muted{border-color:#526579;color:#d9e4ee;background:#182331}
+.preview{position:sticky;top:120px}.quote{background:#fff;color:#18202a;border-radius:12px;overflow:hidden;box-shadow:0 20px 55px #0006}.qhead{background:#101a22;color:white;padding:25px 27px;border-bottom:4px solid #55ff9a}.qhead h2{font-size:23px;margin:0 0 5px;letter-spacing:.4px}.qhead p{margin:0;color:#c2d2dc}.qbody{padding:24px 26px}.qmeta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}.meta{background:#f3f6f8;padding:10px 12px;border-radius:6px}.meta b{display:block;color:#687782;font-size:10px;text-transform:uppercase;letter-spacing:.6px}.meta span{font-weight:700;font-size:12px;overflow-wrap:anywhere}.qsection{margin:20px 0}.qsection h3{font-size:12px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid #d9e1e5;padding-bottom:7px;color:#16754a}.qtable{font-size:11px}.qtable th{background:#eaf5ef;color:#175e3e}.qtable td,.qtable th{border-bottom:1px solid #dce4e8;padding:8px 7px}.right{text-align:right;white-space:nowrap}.totals{margin-left:auto;max-width:320px}.totalrow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #e1e7ea}.grand{font-size:16px;font-weight:900;color:#137342;border-top:2px solid #137342;margin-top:7px;padding-top:10px}.fine{font-size:10px;color:#56636d}.qbody ul{padding-left:18px}.qbody li{margin:4px 0}.qfoot{background:#f4f7f8;padding:17px 26px;color:#52616b;font-size:10px}.hidden{display:none!important}.note{color:var(--muted);font-size:11px;margin-top:9px}.pill{display:inline-block;padding:4px 8px;border-radius:99px;background:#153a2a;color:#72ffab;font-size:10px;font-weight:800}
+@media(max-width:950px){.wrap{grid-template-columns:1fr}.preview{position:static}header{position:static}}
+@media(max-width:520px){.grid,.checklist{grid-template-columns:1fr}.panel{padding:16px}.qbody{padding:17px}.qhead{padding:20px}.qmeta{grid-template-columns:1fr 1fr}}
+@media print{body{background:white}.no-print,header,.wrap>section:first-child{display:none!important}.wrap{display:block;padding:0;max-width:none}.preview{position:static}.quote{box-shadow:none;border-radius:0}.qhead{print-color-adjust:exact;-webkit-print-color-adjust:exact}.qtable th,.meta,.qfoot{print-color-adjust:exact;-webkit-print-color-adjust:exact}@page{size:A4;margin:10mm}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="mark">D<span class="accent">/</span>R</div><div><h1>Discover Resorts <span class="accent">Karjat</span></h1><div class="subtitle">Corporate Quote by Akash C</div></div></div>
+</header>
+<main class="wrap">
+<section>
+ <div class="panel">
+  <h2>Quotation Details</h2>
+  <div class="grid">
+   <div class="field"><label>Quotation / Reference No.</label><input id="ref" value="DRK-CORP-001"></div>
+   <div class="field"><label>Company / Client Name</label><input id="client" placeholder="Company name"></div>
+   <div class="field"><label>Contact Person</label><input id="contact" placeholder="Contact person"></div>
+   <div class="field"><label>Email / Phone</label><input id="phone" placeholder="Email or phone number"></div>
+   <div class="field"><label>Event / Occasion</label><input id="event" placeholder="Corporate offsite / conference"></div>
+   <div class="field"><label>Check-in Date</label><input id="checkin" type="date"></div>
+   <div class="field"><label>Check-out Date</label><input id="checkout" type="date"></div>
+   <div class="field"><label>Adults / Guests</label><input id="guests" type="number" min="0" value="1"></div>
+   <div class="field"><label>Quote Valid Until</label><input id="valid" type="date"></div>
+   <div class="field full"><label>Special Notes (optional)</label><textarea id="notes" rows="2" placeholder="Any additional requirements..."></textarea></div>
+  </div>
+ </div>
+ <div class="panel">
+  <h2>Accommodation & Meal Package</h2>
+  <div class="note">Tick the room categories required and enter quantities. Rates are per person per night, exclusive of 5% GST.</div>
+  <div class="tablewrap"><table id="roomInput"><thead><tr><th>Include</th><th>Room Type</th><th>Qty</th><th>Nights</th><th>Guest in Per Room</th><th>₹ / Person / Night</th></tr></thead><tbody>
+   <tr data-name="Single Occupancy" data-rate="7500"><td><input type="checkbox" class="include" checked></td><td>Single Occupancy</td><td><input class="qty" type="number" min="0" value="1"></td><td><input class="nights" type="number" min="1" value="1"></td><td><input class="pax" type="number" min="1" value="1"></td><td>₹7,500</td></tr>
+   <tr data-name="Double Occupancy" data-rate="5000"><td><input type="checkbox" class="include"></td><td>Double Occupancy</td><td><input class="qty" type="number" min="0" value="1"></td><td><input class="nights" type="number" min="1" value="1"></td><td><input class="pax" type="number" min="1" value="2"></td><td>₹5,000</td></tr>
+   <tr data-name="Triple / Quad Occupancy" data-rate="3800"><td><input type="checkbox" class="include"></td><td>Triple / Quad Occupancy</td><td><input class="qty" type="number" min="0" value="1"></td><td><input class="nights" type="number" min="1" value="1"></td><td><input class="pax" type="number" min="1" value="4"></td><td>₹3,800</td></tr>
+   <tr data-name="Duplex Suite" data-rate="3500"><td><input type="checkbox" class="include"></td><td>Duplex Suite</td><td><input class="qty" type="number" min="0" value="1"></td><td><input class="nights" type="number" min="1" value="1"></td><td><input class="pax" type="number" min="1" value="8"></td><td>₹3,500</td></tr>
+  </tbody></table></div>
+  <div class="grid" style="margin-top:14px">
+   <div class="field"><label>Accommodation GST</label><select id="roomgst"><option value="5">5%</option><option value="0">0% (not applied)</option></select></div>
+   <div class="field"><label>Extra-person meal guests</label><input id="mealGuests" type="number" min="0" value="0"></div>
+  </div>
+ </div>
+ <div class="panel">
+  <h2>Optional Add-ons — Tick to Include</h2>
+  <div class="checklist" id="addons">
+   <label class="check"><input type="checkbox" data-name="Extra Person Lunch" data-price="850" data-tax="5" data-unit="per person"><span>Lunch <small>₹850 / person • 5% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Extra Person Hi-Tea" data-price="300" data-tax="5" data-unit="per person"><span>Hi-Tea <small>₹300 / person • 5% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Extra Person Dinner" data-price="850" data-tax="5" data-unit="per person"><span>Dinner <small>₹850 / person • 5% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Extra Person Breakfast" data-price="500" data-tax="5" data-unit="per person"><span>Breakfast <small>₹500 / person • 5% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Marigold Banquet Hall" data-price="75000" data-tax="18" data-unit="per shift"><span>Marigold Banquet Hall <small>₹75,000 • 8-hour shift • 18% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Khazana Banquet Hall" data-price="70000" data-tax="18" data-unit="per shift"><span>Khazana Banquet Hall <small>₹70,000 • 8-hour shift • 18% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Tulip Banquet Hall" data-price="35000" data-tax="18" data-unit="per shift"><span>Tulip Banquet Hall <small>₹35,000 • 8-hour shift • 18% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Portico Convention Centre" data-price="250000" data-tax="18" data-unit="per shift"><span>Portico Convention Centre <small>₹2,50,000 • 8-hour shift • 18% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Screen" data-price="700" data-tax="18" data-unit="per unit"><span>Screen <small>₹700 • 18% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Collar / Hand Mike" data-price="700" data-tax="18" data-unit="per unit"><span>Collar / Hand Mike <small>₹700 • 18% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="LCD Screen & Projector" data-price="10000" data-tax="18" data-unit="per unit"><span>LCD Screen & Projector <small>₹10,000 • 18% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="DJ Charges (3 hours)" data-price="15000" data-tax="18" data-unit="per session"><span>DJ Charges <small>₹15,000 / 3-hour session till 10:30 PM • 18% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="PPL License (Mandatory for applicable music events)" data-price="10000" data-tax="18" data-unit="per event"><span>PPL License <small>₹10,000 • 18% GST • mandatory where applicable</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Bar Handling Charges (Compulsory if bar service)" data-price="15000" data-tax="18" data-unit="per event"><span>Bar Handling <small>₹15,000 • 18% GST</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Starter Package" data-price="750" data-tax="5" data-unit="per person"><span>Starter Package <small>₹750 / person • unlimited 2 hours • 2 veg + 2 non-veg • 5% GST assumed</small></span></label>
+   <label class="check"><input type="checkbox" data-name="IMFL Liquor Package" data-price="3200" data-tax="18" data-unit="per person"><span>IMFL Liquor Package <small>₹3,200 / person • unlimited 2 hours • 18% GST assumed</small></span></label>
+   <label class="check"><input type="checkbox" data-name="Team-building Exercises" data-price="25000" data-tax="18" data-unit="per session"><span>Team-building Exercises <small>₹25,000 / 2 hours • 18% GST assumed</small></span></label>
+  </div>
+  <div class="grid" style="margin-top:14px">
+   <div class="field"><label>Extra meal / per-person add-on quantity</label><input id="addonPax" type="number" min="1" value="1"></div>
+   <div class="field"><label>Banquet / fixed add-on quantity</label><input id="fixedQty" type="number" min="1" value="1"></div>
+  </div>
+  <div class="note">GST rates for starter, IMFL and team-building are editable assumptions for quotation calculation; confirm the applicable tax treatment before sending. Bar handling source wording says “18% VAT”; shown here as 18% GST for calculation and should be verified.</div>
+ </div>
+ <div class="panel">
+  <h2>Included in Package</h2>
+  <div class="checklist" id="inclusions">
+   <label class="check"><input type="checkbox" checked data-text="Accommodation"><span>Accommodation</span></label>
+   <label class="check"><input type="checkbox" checked data-text="Buffet lunch, hi-tea, dinner and next-day breakfast at a designated venue"><span>Buffet lunch, hi-tea, dinner & breakfast</span></label>
+   <label class="check"><input type="checkbox" checked data-text="2 litres of bottled water in each room per day"><span>2L bottled water / room / day</span></label>
+   <label class="check"><input type="checkbox" checked data-text="Welcome drink on arrival"><span>Welcome drink on arrival</span></label>
+   <label class="check"><input type="checkbox" checked data-text="Tea / coffee maker replenished every day"><span>Tea / coffee maker replenished daily</span></label>
+   <label class="check"><input type="checkbox" checked data-text="Free use of recreation activities and game zone"><span>Recreation activities & game zone</span></label>
+  </div>
+ </div>
+
+ <div class="panel">
+  <h2>Day-wise Activities & Inclusions</h2>
+  <div class="grid">
+   <div class="field"><label>Select Day</label><select id="activityDay"><option value="1">Sunday</option><option value="2">Monday</option><option value="3">Tuesday</option><option value="4">Wednesday</option><option value="5">Thursday</option><option value="6">Friday</option><option value="7">Saturday</option></select></div>
+   <div class="field"><label>Custom activity / inclusion</label><input id="customActivity" placeholder="Add another activity or inclusion"></div>
+  </div>
+  <div style="margin:14px 0 8px;color:#b9c8d6;font-size:12px;font-weight:650">Tick the activities to include for the selected day</div>
+  <div class="checklist" id="dayActivityChoices"></div>
+  <div class="actions">
+   <button type="button" class="btn secondary" onclick="addCustomActivity()">+ Add Custom to This Day</button>
+   <button type="button" class="btn muted" onclick="clearSelectedDay()">Clear This Day</button>
+  </div>
+  <div class="note">Choose a day, tick its activities, then switch to another day. Only selected activities will appear in the quotation. No month or calendar dates are shown.</div>
+ </div>
+
+ <div class="panel">
+  <h2>Policies to Attach</h2>
+  <div class="checklist" id="policies">
+   <label class="check"><input type="checkbox" checked data-policy="timings"><span>Check-in / check-out & meal timings</span></label>
+   <label class="check"><input type="checkbox" checked data-policy="pool"><span>Swimming pool regulations</span></label>
+   <label class="check"><input type="checkbox" checked data-policy="cancellation"><span>Cancellation & early departure</span></label>
+   <label class="check"><input type="checkbox" checked data-policy="payment"><span>Payment terms & convenience charge</span></label>
+   <label class="check"><input type="checkbox" checked data-policy="lost"><span>Lost & found / damage policy</span></label>
+   <label class="check"><input type="checkbox" checked data-policy="booking"><span>Availability / booking status</span></label>
+   <label class="check"><input type="checkbox" checked data-policy="corkage"><span>Corkage policy</span></label>
+  </div>
+  <div class="actions no-print">
+   <button class="btn" onclick="window.print()">⬇ Download Quotation / Save as PDF</button>
+   <button class="btn secondary" onclick="downloadHTML()">Download HTML</button>
+   <button class="btn muted" onclick="copySummary()">Copy Quotation Summary</button>
+   <button class="btn muted" onclick="resetQuote()">Reset</button>
+  </div>
+  <div class="note">For PDF: select “Save as PDF” in the print dialog. Use the HTML download to save an editable, self-contained copy.</div>
+ </div>
+</section>
+
+<section class="preview">
+ <div class="quote" id="quote">
+  <div class="qhead"><h2>DISCOVER RESORTS, KARJAT</h2><p>Corporate Stay & Events Quotation</p><p style="margin-top:12px;font-size:11px;color:#55ff9a">BUSINESS WITH PLEASURE</p></div>
+  <div class="qbody">
+   <div style="display:flex;justify-content:space-between;gap:10px;align-items:start;margin-bottom:18px"><div><h2 style="font-size:19px;margin:0;color:#18202a">QUOTATION</h2><div class="fine">Prepared for corporate requirements</div></div><div class="right"><b id="pRef">DRK-CORP-001</b><br><span class="fine">Corporate Quotation</span></div></div>
+   <div class="qmeta">
+    <div class="meta"><b>Company / Client</b><span id="pClient">—</span></div><div class="meta"><b>Contact Person</b><span id="pContact">—</span></div>
+    <div class="meta"><b>Email / Phone</b><span id="pPhone">—</span></div><div class="meta"><b>Event / Occasion</b><span id="pEvent">—</span></div>
+    <div class="meta"><b>Check-in</b><span id="pCheckin">—</span></div><div class="meta"><b>Check-out</b><span id="pCheckout">—</span></div>
+    <div class="meta"><b>Total Guests (from selected rooms)</b><span id="pGuests">1</span></div><div class="meta"><b>Total Rooms</b><span id="pRoomsCount">1</span></div><div class="meta"><b>Quote Valid Until</b><span id="pValid">—</span></div>
+   </div>
+   <div class="qsection"><h3>1. Accommodation & Meal Package</h3><table class="qtable"><thead><tr><th>Particulars</th><th>Qty</th><th>Nights</th><th>Guest in Per Room</th><th class="right">Rate / Person / Night</th><th class="right">Amount</th></tr></thead><tbody id="pRooms"></tbody></table></div>
+   <div class="qsection" id="addonSection"><h3>2. Optional Add-ons</h3><table class="qtable"><thead><tr><th>Particulars</th><th>Qty</th><th>Tax</th><th class="right">Base Amount</th></tr></thead><tbody id="pAddons"></tbody></table></div>
+   <div class="qsection"><h3>3. Inclusions</h3><ul id="pInclusions"></ul></div>
+   <div class="qsection" id="pDayActivitiesSection"><h3>4. Day-wise Activities & Inclusions</h3><div id="pDayActivities"></div></div>
+   <div class="qsection"><h3>Quotation Summary</h3><div class="totals" id="pTotals"></div></div>
+   <div id="pNotesWrap" class="qsection hidden"><h3>Special Notes</h3><p id="pNotes"></p></div>
+   <div class="qsection" id="policySection"><h3>Terms & Conditions</h3><ul id="pPolicies"></ul></div>
+   <p style="font-size:11px;margin-top:25px">We look forward to welcoming your team to Discover Resorts, Karjat. For any clarification or special requirement, please contact our team.</p>
+   <p style="font-size:11px;margin-top:18px"><b>Regards,</b><br>Corporate Sales Team<br><b>Discover Resorts, Karjat (Neral)</b></p>
+  </div>
+  <div class="qfoot">This is a quotation / enquiry only. No rooms or venues are blocked until availability is reconfirmed and the signed contract and advance payment are received. Rates and availability are subject to revision.</div>
+ </div>
+</section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const money=n=>'₹'+(Number(n)||0).toLocaleString('en-IN',{maximumFractionDigits:2,minimumFractionDigits:2});
+const dateFmt=v=>{if(!v)return '—';const d=new Date(v+'T00:00:00');return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})};
+const safe=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const dayActivities = {
+  1: ["Kids Zone Origami Craft","Rain Dance","Dessert Making Masterclass","Ludo Championship","Karaoke Session","Midnight Movie","Lunch","Hi-Tea","Dinner","Breakfast"],
+  2: ["Kids Zone Free Hand Drawing","Rain Dance","Mocktail Making Masterclass","Chess Championship","Karaoke Night","Midnight Movie","Lunch","Hi-Tea","Dinner","Breakfast"],
+  3: ["Kids Zone Seed Art","Rain Dance","Dessert Making Masterclass","Fun Games","Karaoke Session","DJ Night","Lunch","Hi-Tea","Dinner","Breakfast"],
+  4: ["Kids Zone Thread Painting","Rain Dance","Mocktail Making Masterclass","Musical Chairs","Karaoke Night","Midnight Movie","Lunch","Hi-Tea","Dinner","Breakfast"],
+  5: ["Kids Zone News Paper Craft","Rain Dance","Mocktail Making Masterclass","Zumba Session","DJ Night","Midnight Movie","Lunch","Hi-Tea","Dinner","Breakfast"],
+  6: ["Kids Zone Fun Activities","Rain Dance","Foam Party","Magic Show","Zumba Session","Mimicry Show","Live Band","Afterparty DJ Night (Roxxii Bar)","Lunch","Hi-Tea","Dinner","Breakfast"],
+  7: ["Kids Zone Thread Painting","Rain Dance","Dart Championship","Musical Chairs","Karaoke Night","Midnight Movie","Lunch","Hi-Tea","Dinner","Breakfast"]
+};
+const selectedDayActivities = {};
+Object.keys(dayActivities).forEach(day => selectedDayActivities[day] = []);
+function renderDayActivityChoices() {
+  const day = $('activityDay').value;
+  const items = dayActivities[day] || [];
+  $('dayActivityChoices').innerHTML = items.map((item,i) => {
+    const checked = selectedDayActivities[day].includes(item) ? 'checked' : '';
+    return `<label class="check"><input type="checkbox" ${checked} data-day-activity="${safe(item)}" onchange="toggleDayActivity(this)"><span>${safe(item)}</span></label>`;
+  }).join('');
+  renderDayActivitiesPreview();
+}
+function toggleDayActivity(box) {
+  const day = $('activityDay').value, item = box.dataset.dayActivity;
+  if (box.checked) { if (!selectedDayActivities[day].includes(item)) selectedDayActivities[day].push(item); }
+  else selectedDayActivities[day] = selectedDayActivities[day].filter(x => x !== item);
+  renderDayActivitiesPreview();
+}
+function addCustomActivity() {
+  const day = $('activityDay').value, input = $('customActivity'), item = input.value.trim();
+  if (!item) { alert('Enter an activity or inclusion first.'); return; }
+  if (!dayActivities[day].includes(item)) dayActivities[day].push(item);
+  if (!selectedDayActivities[day].includes(item)) selectedDayActivities[day].push(item);
+  input.value = '';
+  renderDayActivityChoices();
+}
+function clearSelectedDay() {
+  selectedDayActivities[$('activityDay').value] = [];
+  renderDayActivityChoices();
+}
+function renderDayActivitiesPreview() {
+  const entries = Object.keys(selectedDayActivities).filter(day => selectedDayActivities[day].length);
+  $('pDayActivities').innerHTML = entries.length ? entries.map(day =>
+    `<div style="margin:8px 0 12px"><b style="display:block;margin-bottom:4px">${["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][Number(day)-1]}</b><ul style="margin:0;padding-left:18px">${selectedDayActivities[day].map(item=>`<li>${safe(item)}</li>`).join('')}</ul></div>`
+  ).join('') : '<p class="fine">No day-wise activities selected.</p>';
+  $('pDayActivitiesSection').classList.toggle('hidden', !entries.length);
+}
+
+const policies={
+ timings:'Check-in is from 2:00 PM; check-out is by 11:00 AM. Early arrival must be pre-booked and may incur a full night charge. Late check-out from 2:00 PM to 6:00 PM is charged at half the daily room rate; after 6:00 PM, a full night charge applies. Meal timings: Lunch 1:00–3:00 PM; Hi-tea 5:00–6:00 PM; Dinner 8:00–10:00 PM; Breakfast 8:00–10:00 AM.',
+ pool:'Swimming pool access requires swimming costumes or dry-fit clothing. Other clothing is not permitted in the pool.',
+ cancellation:'Free cancellation is permitted up to 14 days before arrival. Cancellations within 14 days, no-shows, or non-arrival of a guaranteed reservation may incur the full paid / entire-stay room charge. Refunds may take up to 30 days. For early departure, the resort may charge a minimum of one night and up to 100% of the total room nights booked. Contract terms prevail where applicable.',
+ payment:'A 50% advance is required for confirmation. The remaining 50% must be paid one day before check-in; 100% payment is required before check-in. Credit/debit card payments attract a 2% convenience charge. No convenience charge applies to UPI, RuPay, IMPS, NEFT or RTGS.',
+ lost:'Please report lost items to the front desk promptly. Found items are handled under the resort lost-and-found protocol; the resort cannot be held responsible for lost or misplaced belongings. Damage caused by guests may be charged for repair or replacement.',
+ booking:'This quotation is an enquiry only. No rooms or banquet venues are booked or blocked. All are subject to availability until the signed contract and advance deposit are received. Rates are valid until the stated validity date, after which they may be revised.',
+ corkage:'Outside alcohol corkage: ₹100 per beer bottle and ₹1,500 per liquor bottle. Charges include napkins, plates, coasters, acrylic glasses, munchings and ice.'
+};
+function getInput(id){return $(id).value.trim()}
+function render(){
+ const fields={pRef:'ref',pClient:'client',pContact:'contact',pPhone:'phone',pEvent:'event'};
+ Object.entries(fields).forEach(([out,inp])=>$(out).textContent=getInput(inp)||'—');
+ $('pCheckin').textContent=dateFmt(getInput('checkin'));$('pCheckout').textContent=dateFmt(getInput('checkout'));$('pValid').textContent=dateFmt(getInput('valid'));
+ let totalGuests=0,totalRooms=0;
+ document.querySelectorAll('#roomInput tbody tr').forEach(tr=>{if(tr.querySelector('.include').checked){const q=Math.max(0,+tr.querySelector('.qty').value||0);const pax=Math.max(1,+tr.querySelector('.pax').value||1);totalRooms+=q;totalGuests+=q*pax;}});
+ $('pGuests').textContent=totalGuests.toLocaleString('en-IN');$('pRoomsCount').textContent=totalRooms.toLocaleString('en-IN');
+ let subtotal=0,taxTotal=0,roomSubtotal=0,roomTax=0,rows='', addonRows='';
+ document.querySelectorAll('#roomInput tbody tr').forEach(tr=>{
+  const on=tr.querySelector('.include').checked,qty=Math.max(0,+tr.querySelector('.qty').value||0),n=Math.max(1,+tr.querySelector('.nights').value||1),p=Math.max(1,+tr.querySelector('.pax').value||1),rate=+tr.dataset.rate;
+  if(on&&qty>0){let amt=qty*n*p*rate;roomSubtotal+=amt;rows+=`<tr><td>${safe(tr.dataset.name)}</td><td>${qty}</td><td>${n}</td><td>${p}</td><td class="right">${money(rate)}</td><td class="right">${money(amt)}</td></tr>`}
+ });
+ if(!rows)rows='<tr><td colspan="6">No accommodation selected</td></tr>';
+ const roomTaxRate=+$('roomgst').value;roomTax=roomSubtotal*roomTaxRate/100;subtotal+=roomSubtotal;taxTotal+=roomTax;
+ const pax=Math.max(1,+$('addonPax').value||1),fixed=Math.max(1,+$('fixedQty').value||1),mealGuests=Math.max(0,+$('mealGuests').value||0);
+ document.querySelectorAll('#addons input[type=checkbox]').forEach(cb=>{
+  if(!cb.checked)return;
+  let qty=cb.dataset.unit==='per person'?((cb.dataset.name.startsWith('Extra Person')?mealGuests:pax)):fixed;
+  if(cb.dataset.name.startsWith('Extra Person')&&mealGuests===0)qty=0;
+  if(qty<=0)return;
+  let base=+cb.dataset.price*qty,tax=base*(+cb.dataset.tax)/100;subtotal+=base;taxTotal+=tax;
+  addonRows+=`<tr><td>${safe(cb.dataset.name)}</td><td>${qty} ${safe(cb.dataset.unit||'')}</td><td>${cb.dataset.tax}%</td><td class="right">${money(base)}</td></tr>`;
+ });
+ $('pRooms').innerHTML=rows;$('pAddons').innerHTML=addonRows||'<tr><td colspan="4">No add-ons selected</td></tr>';
+ $('addonSection').classList.toggle('hidden',!addonRows);
+ const grand=subtotal+taxTotal;
+ $('pTotals').innerHTML=`<div class="totalrow"><span>Accommodation & add-ons</span><b>${money(subtotal)}</b></div><div class="totalrow"><span>GST / taxes</span><b>${money(taxTotal)}</b></div><div class="totalrow grand"><span>Estimated Total</span><b>${money(grand)}</b></div><div class="fine" style="text-align:right;margin-top:7px">Rates are subject to availability and tax verification.</div>`;
+ const inc=[...document.querySelectorAll('#inclusions input:checked')].map(c=>c.dataset.text);
+ $('pInclusions').innerHTML=inc.length?inc.map(x=>`<li>${safe(x)}</li>`).join(''):'<li>No inclusions selected.</li>';
+ const pol=[...document.querySelectorAll('#policies input:checked')].map(c=>policies[c.dataset.policy]);
+ $('pPolicies').innerHTML=pol.length?pol.map(x=>`<li>${safe(x)}</li>`).join(''):'<li>No policy sections selected.</li>';
+ $('policySection').classList.toggle('hidden',!pol.length);
+ const note=getInput('notes');$('pNotesWrap').classList.toggle('hidden',!note);$('pNotes').textContent=note;
+}
+document.addEventListener('input',e=>{if(e.target.matches('input,select,textarea'))render()});
+$('activityDay').addEventListener('change', renderDayActivityChoices);
+document.addEventListener('change',e=>{if(e.target.matches('input,select,textarea'))render()});
+function downloadHTML(){
+ const clone=document.documentElement.cloneNode(true);
+ clone.querySelectorAll('script').forEach(s=>s.remove());
+ const blob=new Blob(['<!DOCTYPE html>\n'+clone.outerHTML],{type:'text/html;charset=utf-8'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Discover-Resorts-Karjat-Corporate-Quotation.html';a.click();URL.revokeObjectURL(a.href);
+}
+function copySummary(){
+ const text=`DISCOVER RESORTS, KARJAT — CORPORATE QUOTATION\nReference: ${getInput('ref')}\nClient: ${getInput('client')||'—'}\nContact: ${getInput('contact')||'—'}\nEvent: ${getInput('event')||'—'}\nCheck-in: ${dateFmt(getInput('checkin'))} | Check-out: ${dateFmt(getInput('checkout'))}\nEstimated total: ${$('pTotals').querySelector('.grand b')?.textContent||'—'}\n\nThis is an enquiry only. Rooms and venues are subject to availability until signed contract and advance payment are received.`;
+ navigator.clipboard?.writeText(text).then(()=>alert('Quotation summary copied.')).catch(()=>prompt('Copy quotation summary:',text));
+}
+function resetQuote(){if(confirm('Reset quotation fields and add-ons?')){location.reload()}}
+render();
+renderDayActivityChoices();
+</script>
+</body>
+</html>
